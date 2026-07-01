@@ -1,0 +1,313 @@
+body {
+  background-image: url('assets/back.png'); 
+  font-family: 'VT323', monospace;
+  cursor: url('assets/Red 2.cur'), auto;
+  color: #3a003a;
+  margin: 0;
+}
+.main-window {
+  width: 1075px;
+  margin: 16px auto 0 auto;
+  background: #f5f4f7;
+  border: 2px solid #C11C84;
+  border-radius: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+}
+.header {
+  text-align: center;
+  background: #C11C84;
+  font-family: 'VT323', monospace;
+}
+.logo-img {
+  width: 199px;
+  align-items: center;
+  height: auto;
+  margin-top: 2px;
+    text-align: center;
+}
+.window-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+  font-family: 'VT323', monospace;
+}
+.nav {
+  width: 260px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 32px;
+  gap: 12px;
+  background: none;
+  font-family: 'VT323', monospace;
+}
+.nav-gif {
+  width: 225px;
+  height: 30px;
+  display: block;
+  border: none !important;
+  background: none !important;
+  outline: none !important;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+}
+
+.nav-gif:hover {
+  cursor: url('assets/Yellow 1.cur'), pointer;
+}
+
+.book-section {
+  background: #fff;
+  border: 12px solid transparent;
+  border-image: url('assets/cute-pink-frame.png') 52 round;
+  border-radius: 8px;
+  min-height: 120px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 33px 0 2px 0;
+  padding: 8px 0;
+  background-color: #fff0fa !important;
+  font-family: 'VT323', monospace;
+}
+
+.book-section h3 {
+  font-size: 17px;
+  color: #ff4b8e;
+  margin: 4px 0 2px 0;
+  font-family: 'VT323', monospace;
+}
+
+.book-img {
+  width: 86px;
+  height: 114px;
+  border-radius: 4px;
+  margin-left: 6.5px;
+  border: 1px solid #ffb6f9;
+  margin-bottom: 2px;
+  display: block;
+  background-color: #fff0fa !important;
+}
+
+.book-img:hover {
+  cursor: url('assets/Yellow 1.cur'), pointer;
+}
+
+.content {
+  flex: 0 0 540px; /* Thinner center column */
+  max-width: 540px;
+  min-width: 350px;
+  border-right: 2px solid #C11C84;
+  border-left: 2px solid #C11C84;
+  padding: 0 1px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 2px;
+  font-family: 'VT323', monospace;
+}
+.window {
+  background-color: #fff0fa !important;
+  border: 12px solid transparent;
+  border-image: url('assets/cute-pink-frame.png') 52 round;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  padding: 10px 16px;
+  font-family: 'VT323', monospace;
+}
+.welcome h1 {
+  font-size: 25px;
+  color: #a300a3;
+  margin: 0 0 8px 0;
+  font-family: 'VT323', monospace;
+  align-items: center;
+}
+.welcome {
+  text-align: center;
+}
+.art-carousel-container {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'VT323', monospace;
+}
+.carousel-container {
+  width: 270px;
+  height: 140px;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 2px solid #C11C84;
+  background: #f6eaff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'VT323', monospace;
+}
+.carousel-track {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  animation: scroll 18s linear infinite;
+  font-family: 'VT323', monospace;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+.carousel-item {
+  width: 120px;
+  height: 120px;
+  margin-right: 10px;
+  border: 2px solid #C11C84; /* or your updated border color */
+  background: black;
+  /* Remove or comment out object-fit: contain; */
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-805px); }
+}
+.submit-section {
+  background-color: #fff0fa !important;
+  border: 2px solid #a3f1ff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'VT323', monospace;
+}
+.submit-text {
+  width: 97.5%;
+  min-height: 40px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 4px;
+  font-family: 'VT323', monospace;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.canvas-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  align-items: center;
+  font-family: 'VT323', monospace;
+}
+.canvas-toolbar button {
+  border: 2px solid #ffb6f9;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: 'VT323', monospace;
+  background: #fff0fa;
+  color: #a300a3;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.15s;
+}
+.canvas-toolbar button:hover {
+  background: #ffb6f9;
+  color: #fff;
+}
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid #ffb6f9;
+  outline: 2px solid #fff;
+  cursor: pointer;
+}
+.color-btn.selected {
+  outline: 2px solid #a300a3;
+}
+#draw-canvas {
+  background: #fff;
+  border: 1px solid #a3f1ff;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  width: 482px;
+  height: 250px;
+  display: block;
+}
+#submit-btn {
+  background: #a3f1ff;
+  color: #3a003a;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'VT323', monospace;
+}
+#submit-btn:hover {
+  background: #00b4d8;
+  color: #fff;
+}
+.sidebar {
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 32px;
+  gap: 12px;
+  min-height: 500px;
+  box-sizing: border-box;
+  font-family: 'VT323', monospace;
+}
+.binky-img {
+  width: 225px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+  margin: 35px 0 15px 80px;
+}
+.mood-section {
+  margin-left: 30px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 8px 0;
+  width: 100%;
+  font-family: 'VT323', monospace;
+}
+.mood-section h3 {
+  color: #00b4d8;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  font-size: 14px;
+  font-family: 'VT323', monospace;
+}
+.mood-section a,
+.mood-section img {
+  display: block;
+  margin: 0 auto;
+}
+.window,.mood-section,.submit-section, .book-section {
+  border: 12px solid transparent;
+  border-image: url('assets/cute-pink-frame.png') 250 round;
+}
+.window, .book-section, .submit-section, .mood-section {
+  background-color: #f5f4f7 !important;
+  font-family: 'VT323', monospace;
+}
+
+.retro-counter {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 5px 0;
+  align-items: center;
+  text-align: center;
+}
