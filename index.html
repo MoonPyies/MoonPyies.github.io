@@ -1,387 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- Everything here goes inside of your <body></body> tags! -->
 
-
-<script type="text/javascript">
-// <![CDATA[
-var speed=100; // speed colours change, 1 second = 1000
-var glow=8; // can be set from '0' for no glow, to 10
-var raincol=new Array("#ff0000", "#ff5500", "#ffaa00", "#ffff00", "#aaff00", "#55ff00", "#00ff00", "#00ff55", "#00ffaa", "#00ffff", "#00aaff", "#0055ff", "#0000ff", "#5500ff", "#aa00ff", "#ff00ff", "#ff00aa", "#ff0055"); // change the colours if you want to
-var alink="http://www.mf2fm.com/rv/"; // page to link text to (set to ="" for no link)
-
-/****************************
-*    Rainbow Text Effect    *
-*(c)2003-13 mf2fm web-design*
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
-var rainbow, raintxt, raincnt=0;
-
-function addLoadEvent(funky) {
-  var oldonload=window.onload;
-  if (typeof(oldonload)!='function') window.onload=funky;
-  else window.onload=function() {
-    if (oldonload) oldonload();
-    funky();
-  }
-}
-
-addLoadEvent(regenbogen);
-
-function regenbogen() { if (document.getElementById) {
-  var i, rainbeau;
-  rainbow=document.getElementById("rainbow");
-  raintxt=rainbow.firstChild.nodeValue;
-  while (rainbow.childNodes.length) rainbow.removeChild(rainbow.childNodes[0]);
-  for (i=0; i<raintxt.length; i++) {
-    rainbeau=document.createElement("span");
-    rainbeau.setAttribute("id", "rain"+i);
-    rainbeau.appendChild(document.createTextNode(raintxt.charAt(i)));
-    if (alink) {
-      rainbeau.style.cursor="pointer";
-      rainbeau.onclick=function() { top.location.href=alink; }
-    }
-    rainbow.appendChild(rainbeau);
-  }
-  rainbow=setInterval ("raining()", speed);
-}}
-
-function raining() {
-  var i, c;
-  for (i=0; i<raintxt.length; i++) {
-    c=raincol[(i+raincnt)%raincol.length];
-    document.getElementById("rain"+i).style.color=c;
-	if (glow) document.getElementById("rain"+i).style.textShadow=c+" 0px 0px "+glow+"px";
-  }
-  raincnt++;
-}
-// ]]>
-</script>
-
-
-  
-<script type="text/javascript">
-// <![CDATA[
-var speed=300; // speed of wobbling, lower is faster
-var height=5; // height of wobbling in pixels
-var alink="http://www.mf2fm.com/rv";
-
-/****************************
-*    Wobbly Text Effect     *
-*(c) 2003-6 mf2fm web-design*
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
-var wobtxt, wobble, wobcnt=0;
-window.onload=function() { if (document.getElementById) {
-  var i, wobli;
-  wobble=document.getElementById("wobble");
-  wobtxt=wobble.firstChild.nodeValue;
-  while (wobble.childNodes.length) wobble.removeChild(wobble.childNodes[0]);
-  for (i=0; i<wobtxt.length; i++) {
-    wobli=document.createElement("span");
-    wobli.setAttribute("id", "wobb"+i);
-    wobli.style.position="relative";
-    wobli.appendChild(document.createTextNode(wobtxt.charAt(i)));
-    if (alink) {
-      wobli.style.cursor="pointer";
-      wobli.onclick=function() { top.location.href=alink; }
-    }
-    wobble.appendChild(wobli);
-  }
-  setInterval("wobbler()", speed);
-}}
-
-function wobbler() {
-  for (var i=0; i<wobtxt.length; i++) document.getElementById("wobb"+i).style.top=Math.round(height*Math.sin(i+wobcnt))+"px"
-  wobcnt++;
-}
-// ]]>
-</script>
-<script type="text/javascript">
-// <![CDATA[
-var sparks=75; // how many sparks per clicksplosion
-var speed=33; // how fast - smaller is faster
-var bangs=5; // how many can be launched simultaneously (note that using too many can slow the script down)
-var colours=new Array('#03f', '#f03', '#0e0', '#93f', '#0cf', '#f93', '#f0c'); 
-//                     blue    red     green   purple  cyan    orange  pink
-
-/****************************
-*   Clicksplosion Effect    *
-*(c)2012-3 mf2fm web-design *
-*  http://www.mf2fm.com/rv  *
-* DON'T EDIT BELOW THIS BOX *
-****************************/
-var intensity=new Array();
-var Xpos=new Array();
-var Ypos=new Array();
-var dX=new Array();
-var dY=new Array();
-var stars=new Array();
-var decay=new Array();
-var timers=new Array();
-var swide=800;
-var shigh=600;
-var sleft=sdown=0;
-var count=0;
-
-function addLoadEvent(funky) {
-  var oldonload=window.onload;
-  if (typeof(oldonload)!='function') window.onload=funky;
-  else window.onload=function() {
-    if (oldonload) oldonload();
-    funky();
-  }
-}
-
-addLoadEvent(clicksplode);
-
-function clicksplode() { if (document.getElementById) {
-  var i, j;
-  window.onscroll=set_scroll;
-  window.onresize=set_width;
-  document.onclick=eksplode;
-  set_width();
-  set_scroll();
-  for (i=0; i<bangs; i++) for (j=sparks*i; j<sparks+sparks*i; j++) {
-    stars[j]=createDiv('*', 13);
-    document.body.appendChild(stars[j]);
-  }
-}}
-
-function createDiv(char, size) {
-  var div, sty;
-  div=document.createElement('div');
-  sty=div.style;
-  sty.font=size+'px monospace';
-  sty.position='absolute';
-  sty.backgroundColor='transparent';
-  sty.visibility='hidden';
-  sty.zIndex='101';
-  div.appendChild(document.createTextNode(char));
-  return (div);
-}
-
-function bang(N) {
-  var i, Z, A=0;
-  for (i=sparks*N; i<sparks*(N+1); i++) { 
-    if (decay[i]) {
-      Z=stars[i].style;
-      Xpos[i]+=dX[i];
-      Ypos[i]+=(dY[i]+=1.25/intensity[N]);
-      if (Xpos[i]>=swide || Xpos[i]<0 || Ypos[i]>=shigh+sdown || Ypos[i]<0) decay[i]=1;
-      else {
-        Z.left=Xpos[i]+'px';
-        Z.top=Ypos[i]+'px';
-      }
-      if (decay[i]==15) Z.fontSize='7px';
-      else if (decay[i]==7) Z.fontSize='2px';
-      else if (decay[i]==1) Z.visibility='hidden';
-      decay[i]--;
-    }
-    else A++;
-  }
-  if (A!=sparks) timers[N]=setTimeout('bang('+N+')', speed);
-}
-
-function eksplode(e) { 
-  var x, y, i, M, Z, N;
-  set_scroll();
-  y=(e)?e.pageY:event.y+sdown;
-  x=(e)?e.pageX:event.x+sleft;
-  N=++count%bangs;
-  M=Math.floor(Math.random()*3*colours.length);
-  intensity[N]=5+Math.random()*4;
-  for (i=N*sparks; i<(N+1)*sparks; i++) {
-    Xpos[i]=x;
-    Ypos[i]=y-5;
-    dY[i]=(Math.random()-0.5)*intensity[N];
-    dX[i]=(Math.random()-0.5)*(intensity[N]-Math.abs(dY[i]))*1.25;
-    decay[i]=16+Math.floor(Math.random()*16);
-    Z=stars[i].style;
-    if (M<colours.length) Z.color=colours[i%2?count%colours.length:M];
-    else if (M<2*colours.length) Z.color=colours[count%colours.length];
-    else Z.color=colours[i%colours.length];
-    Z.fontSize='13px';
-    Z.visibility='visible';
-  }
-  clearTimeout(timers[N]);
-  bang(N);
-} 
-
-function set_width() {
-  var sw_min=999999;
-  var sh_min=999999;
-  if (document.documentElement && document.documentElement.clientWidth) {
-    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
-    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
-  }
-  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
-    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
-    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
-  }
-  if (document.body.clientWidth) {
-    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
-    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
-  }
-  if (sw_min==999999 || sh_min==999999) {
-    sw_min=800;
-    sh_min=600;
-  }
-  swide=sw_min-7;
-  shigh=sh_min-7;
-}
-
-function set_scroll() {
-  if (typeof(self.pageYOffset)=='number') {
-    sdown=self.pageYOffset;
-    sleft=self.pageXOffset;
-  }
-  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
-    sdown=document.body.scrollTop;
-    sleft=document.body.scrollLeft;
-  }
-  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-    sleft=document.documentElement.scrollLeft;
-    sdown=document.documentElement.scrollTop;
-  }
-  else {
-    sdown=0;
-    sleft=0;
-  }
-}
-// ]]>
-</script>
-  <title>Home >w< </title>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .best-use-section {
-      text-align: center;
-      margin: 24px 0 16px 0;
-      font-size: 1.2em;
-      font-family: 'VT323', monospace;
-    }
-    .best-use-images {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      margin-bottom: 24px;
-    }
-    .best-use-images img {
-      height: 64px;
-      width: auto;
-      background: transparent;
-      padding: 4px;
-    }
-  </style>
-</head>
-<body>
-  <div class="main-window">
-    <div class="retro-counter">
-      <span id="rainbow">VISIT COUNTER</span>: <a href="https://www.hitwebcounter.com" target="_blank">
-        <img src="https://hitwebcounter.com/counter/counter.php?page=20866103&style=0014&nbdigits=6&type=page&initCount=0" title="Counter Widget" alt="Visit counter For Websites" border="0" />
-      </a>
-    </div>                
-    <div class="header">
-      <img src="assets/logo.png" alt="Logo" class="logo-img">
-    </div>
-    <div class="window-row">
-      <!-- Left Sidebar -->
-      <nav class="nav">
-        <a href="index.html"><img src="assets/home.gif" alt="Home" class="nav-gif"></a>
-        <a href="about.html"><img src="assets/about.gif" alt="About" class="nav-gif"></a>
-        <a href="blog.html"><img src="assets/blog.gif" alt="Blog" class="nav-gif"></a>
-        <a href="art.html"><img src="assets/art.gif" alt="Art" class="nav-gif"></a>
-        <a href="music.html"><img src="assets/music.gif" alt="Music" class="nav-gif"></a>
-        <a href="guestbook.html"><img src="assets/guestbook.gif" alt="Guestbook" class="nav-gif"></a>
-        <div class="book-section">
-          <h3>Fav books</h3>
-          <a href="https://mangadex.org/title/4301d363-ee02-43f4-ae24-4cbf29a74830/goodnight-punpun">
-            <img src="assets/book1.webp" alt="Book 1" class="book-img">
-          </a>
-          <a href="https://www.amazon.fr/House-Leaves-Remastered-Mark-Danielewski/dp/0375703764">
-            <img src="assets/book2.jpg" alt="Book 2" class="book-img">
-          </a>        
-        </div>
-      </nav>
-      <!-- Center Content -->
-      <div class="content">
-        <div class="window welcome">
-          <font size="14"><span id="wobble"> ೀ⋆｡ ˚ welcome! ⋆ ˚｡⋆୨୧</span></font>
-          <p>Hello :D ! Welcome to my site, here i will be posting my art and such and try to update my blog a lot.
-            You can send me things if you want I'll post about it and react ! ✧˚ ༘ ⋆｡♡˚ (Please desactivate adblockers for it to fully works ty !! :D)</p>
-          <!-- ADDED SECTION STARTS HERE -->
-          <div class="best-use-section">
-            this site is best use on :
-            <div class="best-use-images">
-              <img src="assets/br2.png" alt="Best Use 2">
-            </div>
-          </div>
-          <!-- ADDED SECTION ENDS HERE -->
-        </div>
-        <div class="window art-carousel-container">
-          <div class="carousel-container">
-            <div class="carousel-track">
-              <img src="assets/art1_placeholder.png" alt="Art 1" class="carousel-item">
-              <img src="assets/art2_placeholder.png" alt="Art 2" class="carousel-item">
-              <img src="assets/art3_placeholder.png" alt="Art 3" class="carousel-item">
-              <img src="assets/art4_placeholder.png" alt="Art 4" class="carousel-item">
-              <img src="assets/art5_placeholder.gif" alt="Art 5" class="carousel-item">
-              <img src="assets/art6_placeholder.png" alt="Art 6" class="carousel-item">
-              <!-- Duplicate for seamless loop -->
-              <img src="assets/art1_placeholder.png" alt="Art 1" class="carousel-item">
-              <img src="assets/art2_placeholder.png" alt="Art 2" class="carousel-item">
-              <img src="assets/art3_placeholder.png" alt="Art 3" class="carousel-item">
-              <img src="assets/art4_placeholder.png" alt="Art 4" class="carousel-item">
-              <img src="assets/art5_placeholder.gif" alt="Art 5" class="carousel-item">
-              <img src="assets/art6_placeholder.png" alt="Art 6" class="carousel-item">
-              <img src="assets/art1_placeholder.png" alt="Art 1" class="carousel-item">
-              <img src="assets/art2_placeholder.png" alt="Art 2" class="carousel-item">
-            </div>
-          </div>
-        </div>
-        <div class="submit-section">
-          <form id="submit-form" method="POST" action="https://formspree.io/f/mblylyod">
-            <textarea name="message" placeholder="Write something..." class="submit-text"></textarea>
-            <input type="hidden" name="drawing" id="drawing-field">
-            <div class="canvas-toolbar">
-              <button type="button" id="undo-btn">Undo</button>
-              <button type="button" id="eraser-btn">Eraser</button>
-              <button type="button" class="color-btn" data-color="#000000" style="background:#000"></button>
-              <button type="button" class="color-btn" data-color="#ffffff" style="background:#fff"></button>
-              <button type="button" class="color-btn" data-color="#ff0000" style="background:#ff0000"></button>
-              <button type="button" class="color-btn" data-color="#00ff00" style="background:#00ff00"></button>
-              <button type="button" class="color-btn" data-color="#0000ff" style="background:#0000ff"></button>
-              <button type="button" class="color-btn" data-color="#ffff00" style="background:#ffff00"></button>
-            </div>
-            <canvas id="draw-canvas" width="500" height="250"></canvas>
-            <button type="submit" id="submit-btn">Send</button>
-          </form>
-        </div>
-      </div>
-      <!-- Right Sidebar -->
-      <div class="sidebar">
-        <img src="assets/binky1.gif" alt="Binky 1" class="binky-img">
-        <img src="assets/binky2.gif" alt="Binky 2" class="binky-img">
-        <img src="assets/b3.gif" alt="FlutterShy" class="binky-img">
-        <div class="mood-section">
-          <h3>How I feel today:</h3>
-          <a href="https://www.imood.com/users/BaxtePie">
-            <img src="https://moods.imood.com/display/uname-BaxtePie/fg-FFFFFF/bg-330066/imood.gif" alt="Mood">
-          </a>
-        </div>
-        <img src="assets/b4.webp" alt="Clown Lover" class="binky-img">
-        <a href="https://www.sanrio.com/">
-          <img src="assets/b5.webp" alt="Binky 3" class="binky-img">
-        </a>
-        <img src="assets/b6.webp" alt="Binky 4" class="binky-img">
+<div class="alignment">
+<div class="container">
+  <div class="header"><img src="assets/TopAndBottom/lets-frolick.jpg"></div>
+  <div class="content-wrapper">
+  <div class="content">
+    <div class="left-content">
+      <div class="padding">
+      <h1>this is head one</h1>
+         <p>test</p>
+      <h2>this is head two</h2>
+        <p>It is responsive, which means it works on phones! Yeaaaaah!</p>
+        <p class="removeThis">I love you</p>
+      <h3>this is head three</h3>
+      <h4>this is head four</h4>
+        <p>
+          <strong>bold</strong>
+          <em>italic</em>
+          <u>Underline</u>
+          </p>
       </div>
     </div>
+    <div class="right-content">
+        <ul class="nav">
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+          <li><a href="#">link</a></li>
+      </ul>
+      <div class="subtitle">Section</div>
+      <p>You can put whatever you like here!</p>
+       <div class="subtitle">Section</div>
+      <p>You can put whatever you like here!</p>
+       <div class="subtitle">Section</div>
+      <p>You can put whatever you like here!</p>
+       <div class="subtitle">Section</div>
+      <p>You can put whatever you like here!</p>
   </div>
-  <script src="main.js"></script>
-</body>
-</html>
+</div>
+  </div>
+  <div class="footer-img"><img src="assets/TopAndBottom/lets-frolick-2.jpg"></div>
+</div>
+</div>
