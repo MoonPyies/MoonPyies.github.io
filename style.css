@@ -134,12 +134,12 @@ body {
 .small-cat-icon {
   display: block;
 
-  width: 49px;
+  width: 65px;
 
   height: auto;
 
   margin:
-    7px
+    5px
     auto
     25px;
 }
