@@ -184,10 +184,10 @@ body {
 
   border:
     2px solid
-    rgba(190, 230, 255, 0.95);
+    rgba(255, 229, 224, 0.95);
 
   background:
-    rgba(210, 240, 255, 0.35);
+    rgba(210, 240, 255, 0);
 
   box-shadow:
     inset
@@ -207,7 +207,7 @@ body {
 .menu-navigation {
   border-right:
     2px solid
-    rgba(190, 230, 255, 0.95);
+    rgba(255, 229, 224, 0.95);
 }
 
 
@@ -237,10 +237,10 @@ body {
 
   border-bottom:
     2px solid
-    rgba(190, 230, 255, 0.95);
+    rgba(255, 229, 224, 0.95);
 
   background:
-    rgba(210, 240, 255, 0.25);
+    rgba(210, 240, 255, 0.0);
 }
 
 
