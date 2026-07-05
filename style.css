@@ -1,183 +1,463 @@
-/* You can either copy the below and paste it between style tags on your HTML page, OR you can copy this to a file and name it .css and link it from your HTML page. */
+/* ======================================== */
+/* OLD WEB FONT                             */
+/* ======================================== */
 
-:root {
-  --body-bg:#B2C6F9; /* light blue */
-  --nav-button-bg:#60B272; /* darker green */
-  --content-bg:#A5E8A5; /* lighter green */
-  --accent-dark-one:#ff239a; /* bold pink */
-  --accent-dark-two:#84405c; /* bold blue */
-  --accent-light-one:#A3B0DD; /* light blue */
-  --accent-light-two:#F9B3CF; /* light pink */
-  
-}
+@font-face {
+  font-family: "OldWeb";
 
-html, body {
-  margin:0;
-  font-family:verdana;
-  font-size:10px;
+  src:
+    url("assets/fonts/W95FA.otf")
+    format("opentype");
+
+  font-weight: normal;
+  font-style: normal;
 }
 
-strong {
-  color:var(--accent-dark-one);
-}
-em {
-  color:var(--accent-dark-two);
-}
-u {
-  color:var(--accent-dark-one);
-}
-a {
-  color:var(--accent-dark-two);
-  font-weight:bold;
-}
-.nav li {
-  background-color:var(--nav-button-bg);
-  margin-bottom:2px;
-  text-align:center;
-  display:block;
-  padding:5px;
-}
-.nav li a {
-  font-weight:bold;
-  text-decoration:none;
-  color:white;
-}
-.nav {
-  padding-left:0;
-  margin:0;
-  margin-top:5px;
-  list-style-type:none;
-  margin-bottom:10px;
-  
-}
-nav.ul {
-  padding:none;
-  margin:none;
-  padding-bottom:10px;
-}
+
+
+/* ======================================== */
+/* PAGE                                     */
+/* ======================================== */
+
 body {
-  background-color:var(--body-bg);
-}
-.container {
-  max-width:700px;
-}
-.alignment {
-  display:flex;
-  justify-content:center;
-}
-.content-wrapper {
-  max-width:605px;
-  margin-left:55px;
-  margin-right:0px;
-}
-.content {
-  background-color:var(--content-bg);
-  border:3px solid white;
-  border-top:none;
-  border-bottom:none;
-  box-shadow: -0.3em 0 .5em black;
-  display:flex;
-  flex-wrap:wrap;
-  margin-top:-3px;
-  max-width:100%;
-}
-.footer {
-  width:100%;
-  text-align:center;
-  z-index:99;
-  position:absolute;
-  bottom:-150px;
-  left:0;
-  color:var(--accent-dark-one);
+  margin: 0;
+
+  font-family:
+    "OldWeb",
+    "MS Gothic",
+    monospace;
+
+  background-image:
+    url("assets/Background/artifactResult_texturize_cloud_75673_1024.jpg");
+
+  background-repeat: repeat;
+
+  background-position: center;
+
+  background-size: auto 100%;
+
+  background-attachment: fixed;
 }
 
-.left-content {
-  max-width:350px;
-  margin-right:10px;
-}
-.padding p {
-  padding-left:10px;
-}
-.right-content {
-  width:200px;
-  flex:1;
-  
-}
-.header {
-  margin:0 auto;
-  max-width:713px;
-}
-.footer-img {
-  max-width:700px;
-}
-.footer-img img {
-  max-width:100%;
-}
-.header img {
-  max-width:100%;
-}
-div {
-  margin:0;
-  padding:0;
-}
-h1 {
-  background-color:var(--accent-light-one);
-  color:white;
-}
-h2 {
-  background-color:var(--accent-light-two);
-  color:var(--accent-dark-two);
-}
-h1, h2 {
-  padding:3px;
-}
-h1, h2, h3, h4 {
-  font-size:12px;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-h3 {
-  border-bottom:3px solid white;
-}
-h4 {
-  border-bottom:3px solid var(--nav-button-bg);
-}
-.subtitle {
-  font-weight:bold;
-  color:var(--accent-dark-one);
-  font-size:14px;
-  border-bottom:2px dashed var(--nav-button-bg);
+
+
+/* ======================================== */
+/* WHOLE RETRO MENU                         */
+/* ======================================== */
+
+.retro-menu {
+  width: min(910px, 95vw);
+
+  margin: 53px auto;
+
+  text-align: center;
+
+  font-family:
+    "OldWeb",
+    "MS Gothic",
+    monospace;
+
+  font-size: 32px;
+
+  color: #2b6fa3;
 }
 
-@media only screen and (max-width: 719px) {
-  .content {
-    box-shadow: -0.2em 0 .3em black;
-    border-left:2px solid white;
-    border-right:2px solid white;
-    flex-direction:column;
-    flex-wrap:wrap;
-  }
-  .content-wrapper {
-    max-width:100%;
-    margin-left: 7.85%;
-    margin-right: 6%;
-  }
-  .right-content {
-    display:block;
-    width:100%;
-    order:1;
-  }
-  .left-content {
-    order:2;
-    display:block;
-    width:100%;
-    margin-right:0;
-  }
-  .footer {
-    bottom:-350px;
-    padding-bottom:50px;
-  }
+
+
+/* ======================================== */
+/* TOP HEADER                               */
+/* ======================================== */
+
+.retro-menu-header {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
 }
-.removeThis {
-  background-color:yellow;
+
+
+
+/* ======================================== */
+/* MAIN MENU / HOME LINK                    */
+/* ======================================== */
+
+.main-menu-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 11px;
+
+  color: #2b7daa;
+
+  text-decoration: none;
+
+  font-family:
+    "OldWeb",
+    "MS Gothic",
+    monospace;
+
+  font-size: 32px;
+}
+
+
+
+/* MAIN MENU HOVER */
+
+.main-menu-link:hover {
+  color: #e4589d;
+}
+
+
+
+/* ======================================== */
+/* SMALL PAWS NEXT TO TITLE                 */
+/* ======================================== */
+
+.title-paw {
+  width: 25px;
+
+  height: 50px;
+
+  object-fit: contain;
+}
+
+
+
+/* ======================================== */
+/* SMALL CAT UNDER TITLE                    */
+/* ======================================== */
+
+.small-cat-icon {
+  display: block;
+
+  width: 49px;
+
+  height: auto;
+
+  margin:
+    7px
+    auto
+    25px;
+}
+
+
+
+/* ======================================== */
+/* DECORATIVE DIVIDER IMAGE                 */
+/* ======================================== */
+
+.menu-divider-image {
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+
+  margin:
+    0
+    auto
+    26px;
+}
+
+
+
+/* ======================================== */
+/* MAIN CONTENT BOX                         */
+/* ======================================== */
+
+.menu-content-box {
+  display: grid;
+
+  grid-template-columns:
+    254px
+    1fr;
+
+  width: 683px;
+
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  border:
+    2px solid
+    rgba(190, 230, 255, 0.95);
+
+  background:
+    rgba(210, 240, 255, 0.35);
+
+  box-shadow:
+    inset
+    0
+    0
+    0
+    2px
+    rgba(255, 255, 255, 0.4);
+}
+
+
+
+/* ======================================== */
+/* LEFT NAVIGATION BOX                      */
+/* ======================================== */
+
+.menu-navigation {
+  border-right:
+    2px solid
+    rgba(190, 230, 255, 0.95);
+}
+
+
+
+/* ======================================== */
+/* EACH NORMAL NAVIGATION LINK              */
+/* ======================================== */
+
+.navigation-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  min-height: 47px;
+
+  padding:
+    7px
+    14px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  border-bottom:
+    2px solid
+    rgba(190, 230, 255, 0.95);
+
+  background:
+    rgba(210, 240, 255, 0.25);
+}
+
+
+
+/* NAVIGATION LINK HOVER */
+
+.navigation-link:hover {
+  background:
+    rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* ======================================== */
+/* PURPLE PAW NEXT TO EACH BLINKIE          */
+/* ======================================== */
+
+.navigation-paw {
+  width: 25px;
+
+  height: 25px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+
+/* ======================================== */
+/* BLINKIE THAT REPLACES THE TEXT           */
+/* ======================================== */
+
+.navigation-blinkie {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  min-height: 47px;
+
+  padding:
+    7px
+    14px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  border-bottom:
+    2px solid
+    rgba(190, 230, 255, 0.95);
+
+  background:
+    rgba(210, 240, 255, 0.25);
+}
+
+
+
+/* ======================================== */
+/* GUESTBOOK LINK                           */
+/* ======================================== */
+
+.guestbook-link {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  padding:
+    7px
+    0;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  border-bottom:
+    2px solid
+    rgba(190, 230, 255, 0.95);
+
+  background:
+    rgba(210, 240, 255, 0.25);
+}
+
+
+
+/* GUESTBOOK HOVER */
+
+.guestbook-link:hover {
+  background:
+    rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* GUESTBOOK GIF */
+
+.guestbook-image {
+  display: block;
+
+  width: 100px;
+
+  height: auto;
+
+  border: none;
+}
+
+
+
+/* PAW NEXT TO GUESTBOOK */
+
+.guestbook-paw {
+  display: block;
+
+  width: 25px;
+
+  height: 25px;
+
+  object-fit: contain;
+}
+
+
+
+/* ======================================== */
+/* RIGHT SIDE: PREVIEW BOX                  */
+/* ======================================== */
+
+.menu-preview {
+  padding:
+    0px
+    25px;
+
+  text-align: center;
+
+  font-family:
+    "OldWeb",
+    "MS Gothic",
+    monospace;
+}
+
+
+
+/* ======================================== */
+/* MAIN PREVIEW IMAGE                       */
+/* ======================================== */
+
+.preview-image {
+  width: 200px;
+
+  height: 200px;
+
+  object-fit: cover;
+
+  padding: 5px;
+  margin-top: 15px;
+
+  border:
+    2px solid
+    #d6eaff;
+
+  background: white;
+}
+
+
+
+/* ======================================== */
+/* TEXT UNDER PREVIEW IMAGE                 */
+/* ======================================== */
+
+.preview-text {
+  margin:
+    14px
+    0
+    0;
+
+  font-family:
+    "OldWeb",
+    "MS Gothic",
+    monospace;
+
+  font-size: 30px;
+
+  font-weight: normal;
+
+  color: #e02828;
+}
+
+
+
+/* ======================================== */
+/* MOBILE                                   */
+/* ======================================== */
+
+@media (max-width: 753px) {
+
+  .menu-content-box {
+    width: 95%;
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .menu-navigation {
+    border-right: none;
+
+    border-bottom:
+      2px solid
+      rgba(190, 230, 255, 0.95);
+  }
+
 }
