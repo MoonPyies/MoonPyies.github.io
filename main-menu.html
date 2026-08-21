@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall</title>
+
+ 
+<style>
+ 
+@font-face {
+  font-family: "OldWeb";
+
+  src:
+    url("assets/fonts/W95FA.otf")
+    format("opentype");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+ 
+body{
+background-image: url('assets/Background/artifactResult_texturize_cloud_75673_1024.jpg');
+margin: 7%;
+font-family: "OldWeb", "MS Gothic", monospace;
+font-size: 16px;
+color: #381914;
+}
+ 
+.sidebg{
+background-image: url('assets/border.png');
+background-repeat: repeat-y;
+background-position: top right;
+width: 200px;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+}
+ 
+.side{
+background-color: #fcb207;
+width: 176px;
+height: 100%;
+padding: 1rem 0.5rem 1rem 1rem;
+text-align: justify;
+font-size: 15px;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+ 
+.avatar{
+width: 100%;
+opacity: 0.9;
+}
+ 
+.desc{
+padding: 0.5rem;
+}
+ 
+.sideheaders{
+font-family: "OldWeb", "MS Gothic", monospace;
+padding-left: 1.5rem;
+font-weight: normal;
+font-size: 28px;
+}
+ 
+.side ul{
+padding-left: 2.5rem;
+}
+ 
+.side li{
+list-style-image: url('assets/ezgif.com-resize (2).gif');
+font-size: 16px;
+}
+ 
+.container{
+display: flex;
+flex-direction: column;
+margin-left: 200px;
+}
+ 
+.headerwrapper{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+ 
+.title{
+font-family: 'Love Ya Like A Sister', serif;
+font-weight: normal;
+color: #8f7c66;
+font-size: 46px;
+align-self: end;
+margin-left: -1rem;
+}
+ 
+.headerimg{
+width: 285px;
+align-self: end;
+margin-right: -1rem;
+margin-bottom: -1rem;
+position: relative;
+z-index: 1;
+}
+ 
+.boxgap{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+ 
+.box{
+display: flex;
+flex-direction: row;
+background-color: #fee6ba;
+border: 3px solid #381813;
+}
+ 
+.left{
+border-right: 3px solid #381813;
+padding: 0.7rem;
+text-align: center;
+}
+ 
+.icon{
+border: 2px solid #381813;
+}
+ 
+.right{
+padding: 1rem;
+}
+ 
+a{
+color: #000000;
+text-decoration: none;
+}
+ 
+a:visited{
+color: #8b0000;
+}
+ 
+a:hover{
+font-weight: bold;
+}
+ 
+a:active{
+font-style: italic;
+font-weight: normal;
+}
+ 
+ 
+ 
+::-webkit-scrollbar{
+width: 8px; 
+}
+ 
+::-webkit-scrollbar-track{
+background-color: transparent;
+}
+ 
+::-webkit-scrollbar-thumb{
+background-color: #381813;
+}
+ 
+#credit{
+font-size: 12px;
+position: fixed;
+bottom: 0;
+right: 0;
+}
+ 
+@media(max-width:760px){
+body{
+margin: 0;
+padding: 1rem;
+}
+.sidebg{
+background-image: none;
+position: relative;
+top: 0;
+margin-bottom: 1rem;
+width: 100%;
+height: auto;
+}
+.side{
+height: auto;
+width: 100%;
+text-align: center;
+padding: 1rem;
+}
+.desc{
+font-size: 16px;
+}
+.side ul{
+padding: 0;
+}
+.side li{
+display: inline;
+margin-left: 4px;
+}
+.avatar{
+width: 50%;
+margin: 0 auto;
+}
+.container{
+margin: 0;
+}
+.headerimg{
+width: 180px;
+}
+.title{
+font-size: 36px;
+margin: 0;
+}
+}
+ 
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<div class="sidebg">
+<div class="side">
+ 
+<!-- SIDEBAR AVATAR -->
+<img class="avatar" src="assets/cat-seance.png">
+ 
+<!-- SIDEBAR DESCRIPTION -->
+<p class="desc">Welcome to my website ! I hope you will enjoy your visit !!</p>
+ 
+<!-- SIDEBAR NAV -->
+<h2 class="sideheaders">Navigate</h2>
+<ul>
+<li><a href="">Home</a></li>
+<li><a href="">About</a></li>
+<li><a href="">Gallery</a></li>
+<li><a href="">Blog</a></li>
+<li><a href="">Resources</a></li>
+<li><a href="">Links</a></li>
+<li><a href="">Other</a></li>
+</ul>
+ 
+</div>
+</div>
+ 
+<div class="container">
+<div class="headerwrapper">
+ 
+<!-- TITLE AND HEADER IMAGE -->
+<h1 class="title">Latest Posts !</h1>
+</div>
+
+</div>
+ 
+ 
+</body>
+ 
+</html>
