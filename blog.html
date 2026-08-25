@@ -1,12 +1,12 @@
 ---
-title: Hall
+title: Hall - Blog
 ---
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hall</title>
+    <title>Hall - Blog</title>
 
  
 <style>
@@ -259,12 +259,12 @@ margin: 0;
 <div class="headerwrapper">
  
 <!-- TITLE AND HEADER IMAGE -->
-<h1 class="title">Latest Posts !</h1>
+<h1 class="title">Blog</h1>
 </div>
 
-<!-- LATEST 3 POSTS -->
+<!-- ALL POSTS -->
 <div class="boxgap">
-{% for post in site.posts limit:3 %}
+{% for post in site.posts %}
 <div class="box">
 
 <div class="left">
