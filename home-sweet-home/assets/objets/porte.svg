@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Illustration provisoire de porte">
+<rect width="160" height="160" rx="9" fill="#ffdddd"/><rect x="7" y="7" width="146" height="146" rx="8" fill="none" stroke="#003B75" stroke-dasharray="5 7" opacity=".25" stroke-width="2"/>
+<g transform="translate(0 2) scale(1 .91)"><path d="M46 17H117V128H46Z" fill="#f4bad1" stroke="#003B75" stroke-width="8"/><path d="M59 35h45v34H59zm0 45h45v29H59z" stroke="#003B75" stroke-width="4" fill="#ffe7dc"/><circle cx="99" cy="73" r="5" fill="#fd5000"/></g>
+<rect x="13" y="128" width="134" height="24" rx="3" fill="#fffefa" stroke="#003B75" stroke-width="2"/><text x="80" y="144" text-anchor="middle" fill="#003B75" font-family="Arial,sans-serif" font-weight="900" font-size="12">PORTE</text>
+<text x="146" y="17" text-anchor="end" fill="#003B75" font-family="Arial,sans-serif" font-weight="bold" font-size="7">À DESSINER</text></svg>

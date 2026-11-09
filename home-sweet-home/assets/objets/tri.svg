@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Illustration provisoire de tri">
+<rect width="160" height="160" rx="9" fill="#dcf3bc"/><rect x="7" y="7" width="146" height="146" rx="8" fill="none" stroke="#003B75" stroke-dasharray="5 7" opacity=".25" stroke-width="2"/>
+<g transform="translate(0 2) scale(1 .91)"><path d="M37 43H122l-8 82H46Z" fill="#a8d95c" stroke="#003B75" stroke-width="6" stroke-linejoin="round"/><path d="M29 43h102M64 25h33" stroke="#003B75" stroke-width="7" stroke-linecap="round"/><path d="M75 72l19 12-19 12m19-12H59" fill="none" stroke="#003B75" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<rect x="13" y="128" width="134" height="24" rx="3" fill="#fffefa" stroke="#003B75" stroke-width="2"/><text x="80" y="144" text-anchor="middle" fill="#003B75" font-family="Arial,sans-serif" font-weight="900" font-size="12">CORBEILLE</text>
+<text x="146" y="17" text-anchor="end" fill="#003B75" font-family="Arial,sans-serif" font-weight="bold" font-size="7">À DESSINER</text></svg>
