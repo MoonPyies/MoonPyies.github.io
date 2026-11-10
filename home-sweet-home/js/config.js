@@ -11,8 +11,8 @@
 window.HSH_CONFIG = {
   "assets": {
     "scene": "assets/scene/salon-fond.png",
-    "accueil": "assets/illustrations/accueil-placeholder.svg",
-    "mascotte": "assets/illustrations/mascotte-placeholder.svg",
+    "accueil": "assets/illustrations/accueil-placeholder.gif",
+    "mascotte": "assets/illustrations/mascotte-placeholder.jpg",
     "logo": "assets/logo/face-placeholder.png",
     "favicon": "assets/logo/favicon-placeholder.svg"
   },
@@ -29,7 +29,7 @@ window.HSH_CONFIG = {
       "presentation": "illustration",
       "image": "assets/objets/fenetre.png",
       "badge": "Gardien·ne de la chaleur",
-      "emoji": "✽",
+      "emoji": "OwO",
       "intro": "La fenêtre du salon est restée ouverte alors que le chauffage fonctionne et qu’il fait froid dehors.",
       "question": "Quel geste est le plus malin ?",
       "choices": [
@@ -56,7 +56,7 @@ window.HSH_CONFIG = {
       "w": 12.6,
       "h": 20.7,
       "presentation": "illustration",
-      "image": "assets/objets/rideaux.svg",
+      "image": "assets/objets/rideaux.png",
       "badge": "Ami·e de la lumière",
       "emoji": "☼",
       "intro": "C’est une journée ensoleillée d’hiver, mais les rideaux du salon bloquent toute la lumière naturelle.",
@@ -87,7 +87,7 @@ window.HSH_CONFIG = {
       "presentation": "illustration",
       "image": "assets/objets/ampoule.png",
       "badge": "Petit rayon malin",
-      "emoji": "✦",
+      "emoji": "OwO",
       "intro": "La lampe du salon est équipée d’une vieille ampoule halogène très gourmande en électricité.",
       "question": "Quelle ampoule choisir ?",
       "choices": [
@@ -114,7 +114,7 @@ window.HSH_CONFIG = {
       "w": 16.1,
       "h": 26.4,
       "presentation": "illustration",
-      "image": "assets/objets/porte.svg",
+      "image": "assets/objets/porte.png",
       "badge": "Gardien·ne des portes",
       "emoji": "♧",
       "intro": "La porte entre le salon chauffé et le couloir plus frais reste ouverte.",
@@ -145,7 +145,7 @@ window.HSH_CONFIG = {
       "presentation": "illustration",
       "image": "assets/objets/plante.png",
       "badge": "Main verte réfléchie",
-      "emoji": "❀",
+      "emoji": "OwO",
       "intro": "Cette plante a reçu beaucoup d’eau alors que sa terre est encore bien humide.",
       "question": "Comment l’arroser ?",
       "choices": [
@@ -174,7 +174,7 @@ window.HSH_CONFIG = {
       "presentation": "illustration",
       "image": "assets/objets/radiateur.png",
       "badge": "As du thermostat",
-      "emoji": "❋",
+      "emoji": "OwO",
       "intro": "Le radiateur affiche 24 °C et le salon est déjà très chaud.",
       "question": "Quelle action est la plus raisonnable ?",
       "choices": [
@@ -203,7 +203,7 @@ window.HSH_CONFIG = {
       "presentation": "illustration",
       "image": "assets/objets/television.png",
       "badge": "Champion·ne du bouton OFF",
-      "emoji": "★",
+      "emoji": "OwO",
       "intro": "La télévision reste en veille alors que personne ne va la regarder pendant plusieurs jours.",
       "question": "Quel est le bon réflexe ?",
       "choices": [
@@ -230,9 +230,9 @@ window.HSH_CONFIG = {
       "w": 13.8,
       "h": 21.8,
       "presentation": "illustration",
-      "image": "assets/objets/box.svg",
+      "image": "assets/objets/box.png",
       "badge": "Pilote du Wi-Fi",
-      "emoji": "⌁",
+      "emoji": "OwO",
       "intro": "La maison sera vide plusieurs jours. La box Internet restera allumée alors qu’aucun service connecté n’en dépend.",
       "question": "Quelle décision prendre ?",
       "choices": [
@@ -259,9 +259,9 @@ window.HSH_CONFIG = {
       "w": 14.9,
       "h": 24.1,
       "presentation": "illustration",
-      "image": "assets/objets/canape.svg",
+      "image": "assets/objets/canape.png",
       "badge": "Pro du plaid",
-      "emoji": "♡",
+      "emoji": "OwO",
       "intro": "Tu as un peu froid en regardant un film, mais le salon est déjà correctement chauffé.",
       "question": "Tu essaies quoi en premier ?",
       "choices": [
@@ -288,9 +288,9 @@ window.HSH_CONFIG = {
       "w": 12.6,
       "h": 20.7,
       "presentation": "illustration",
-      "image": "assets/objets/multiprise.svg",
+      "image": "assets/objets/multiprise.png",
       "badge": "Maître·sse des veilles",
-      "emoji": "⚡",
+      "emoji": "OwO",
       "intro": "Une multiprise avec interrupteur alimente plusieurs appareils inutilisés depuis longtemps.",
       "question": "Quel geste peut aider ?",
       "choices": [
@@ -317,9 +317,9 @@ window.HSH_CONFIG = {
       "w": 12.6,
       "h": 20.7,
       "presentation": "illustration",
-      "image": "assets/objets/chargeur.svg",
+      "image": "assets/objets/chargeur.png",
       "badge": "Débranche-tout",
-      "emoji": "✳",
+      "emoji": "OwO",
       "intro": "Un chargeur de téléphone reste branché, mais aucun appareil ne se recharge.",
       "question": "Tu préfères quoi ?",
       "choices": [
@@ -346,9 +346,9 @@ window.HSH_CONFIG = {
       "w": 12.6,
       "h": 20.7,
       "presentation": "illustration",
-      "image": "assets/objets/tri.svg",
+      "image": "assets/objets/tri.png",
       "badge": "Pro du bon bac",
-      "emoji": "✿",
+      "emoji": "OwO",
       "intro": "Dans la corbeille du salon, une feuille de papier propre attend d’être jetée.",
       "question": "Où la mettre ?",
       "choices": [

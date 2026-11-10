@@ -141,8 +141,8 @@ function openObject(id) {
   playSound('tap');
   const content = $('#object-panel-body');
   content.innerHTML = `<div class="object-body">
-    <div class="object-art-col"><span class="art-washi" aria-hidden="true"></span><div class="object-art-frame"><img src="${item.image}" alt="Illustration provisoire de ${escapeHTML(item.name)}" width="160" height="160"></div><span class="art-caption">TON DESSIN ICI ! ✎</span><div class="object-sticker">${escapeHTML(item.sticker)}</div></div>
-    <div class="object-content"><span class="eyebrow">OBJET ${String(OBJECTS.indexOf(item) + 1).padStart(2, '0')} / ${OBJECTS.length}</span><h2 id="object-dialog-title">${escapeHTML(item.name)} <span aria-hidden="true">✳</span></h2><p>${escapeHTML(item.intro)}</p><strong class="object-question">${escapeHTML(item.question)}</strong><div class="choice-list">${item.choices.map((choice, index) => `<button type="button" class="choice-button" data-choice="${index}"><span class="choice-circle">${String.fromCharCode(65 + index)}</span><span>${escapeHTML(choice.label)}</span><span aria-hidden="true">↗</span></button>`).join('')}</div><p class="choice-tip">Pas de pression : choisis ce qui te semble juste ♡</p></div>
+    <div class="object-art-col"><span class="art-washi" aria-hidden="true"></span><div class="object-art-frame"><img src="${item.image}" alt="Illustration provisoire de ${escapeHTML(item.name)}" width="160" height="160"></div><span class="art-caption"></span><div class="object-sticker">${escapeHTML(item.sticker)}</div></div>
+    <div class="object-content"><span class="eyebrow">OBJET ${String(OBJECTS.indexOf(item) + 1).padStart(2, '0')} / ${OBJECTS.length}</span><h2 id="object-dialog-title">${escapeHTML(item.name)} <span aria-hidden="true"></span></h2><p>${escapeHTML(item.intro)}</p><strong class="object-question">${escapeHTML(item.question)}</strong><div class="choice-list">${item.choices.map((choice, index) => `<button type="button" class="choice-button" data-choice="${index}"><span class="choice-circle">${String.fromCharCode(65 + index)}</span><span>${escapeHTML(choice.label)}</span><span aria-hidden="true">↗</span></button>`).join('')}</div><p class="choice-tip"></p></div>
   </div>`;
   $('#object-dialog').showModal();
 }
@@ -154,13 +154,13 @@ function choose(index) {
   saveAnswers(); updateGameUI();
   playSound(correct ? 'success' : 'wrong');
   $('#object-panel-body').innerHTML = `<div class="feedback-body ${correct ? 'feedback-good' : 'feedback-wrong'}">
-    <div class="feedback-sparkle" aria-hidden="true">${correct ? '✦ ✿ ✦' : '✎ ? ✎'}</div>
+    <div class="feedback-sparkle" aria-hidden="true">${correct ? '✦ - ✦' : '? - ?'}</div>
     <div class="feedback-symbol" aria-hidden="true">${correct ? '✓' : '↝'}</div>
     <span class="eyebrow">OBJET ${String(OBJECTS.indexOf(item) + 1).padStart(2, '0')} / ${OBJECTS.length}</span>
-    <h2 id="object-dialog-title">${correct ? 'Trop fort ! ♡' : 'On apprend tous les jours !'}</h2>
+    <h2 id="object-dialog-title">${correct ? 'PHFORT' : 'PHNUL'}</h2>
     <p class="feedback-description">${escapeHTML(correct ? item.good : item.bad)}</p>
     ${correct ? `<div class="badge-earned"><span class="badge-icon">${item.emoji}</span><div><small>NOUVEAU BADGE DÉBLOQUÉ</small><b>${escapeHTML(item.badge)}</b></div></div>` : `<div class="feedback-reminder"><strong>À retenir :</strong> ${escapeHTML(item.memo)}</div>`}
-    <button type="button" class="btn btn-primary btn-full" id="continue-button">${doneCount() === OBJECTS.length ? 'Découvrir mon bilan ↗' : 'Continuer l’exploration ↗'}</button>
+    <button type="button" class="btn btn-primary btn-full" id="continue-button">${doneCount() === OBJECTS.length ? 'Découvrir mon bilan !!' : 'Continuer l’exploration !!'}</button>
     <div class="dialog-mini-progress">${doneCount()} objet${doneCount() > 1 ? 's' : ''} sur ${OBJECTS.length} exploré${doneCount() > 1 ? 's' : ''}</div>
   </div>`;
   $('#continue-button').focus();
