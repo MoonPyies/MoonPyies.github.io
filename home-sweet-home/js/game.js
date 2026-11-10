@@ -148,7 +148,7 @@ function openObject(id) {
 }
 function choose(index) {
   const item = objectById(currentObject);
-  if (!item || Object.hasOwn(answers, iFtem.id) || !item.choices[index]) return;
+  if (!item || Object.hasOwn(answers, item.id) || !item.choices[index]) return;
   const correct = item.choices[index].correct;
   answers[item.id] = correct;
   saveAnswers(); updateGameUI();
